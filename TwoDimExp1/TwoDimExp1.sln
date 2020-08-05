@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoDimExp1", "TwoDimExp1\TwoDimExp1.csproj", "{AE7A85D5-A389-4C2B-A670-762056B6BB9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE7A85D5-A389-4C2B-A670-762056B6BB9C}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{AE7A85D5-A389-4C2B-A670-762056B6BB9C}.Debug|anycpu.Build.0 = Debug|anycpu
+		{AE7A85D5-A389-4C2B-A670-762056B6BB9C}.Release|anycpu.ActiveCfg = Release|anycpu
+		{AE7A85D5-A389-4C2B-A670-762056B6BB9C}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal
