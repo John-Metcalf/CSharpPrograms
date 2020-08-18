@@ -58,7 +58,7 @@ namespace EmpMat1
                 }
                 else
                 {
-                    Console.WriteLine("You cannot work here unless you take a drug test.");
+                    Console.WriteLine("You cannot work here unless you take a drug test and your age is 18 or over.");
                 }
                 Console.WriteLine();
             }
