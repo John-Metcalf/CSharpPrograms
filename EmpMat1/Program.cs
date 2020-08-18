@@ -52,7 +52,7 @@ namespace EmpMat1
                     Console.WriteLine("You are old enough to work here.");
                 }
                 Console.WriteLine();
-                if (applicant.DrugTest == "1")
+                if (applicant.DrugTest == "1" && applicant.Age > 17)
                 {
                     Console.WriteLine("You may apply after drug test.");
                 }
