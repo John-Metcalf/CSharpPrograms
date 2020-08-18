@@ -10,7 +10,7 @@ namespace EmpMat1
         {
 
             var applicantList = new List<Applicant>();
-
+            int Counter1 = 1;
 
             Console.WriteLine("Enter Number of Applicants");
             int NumberOfApplicants = Convert.ToInt32(Console.ReadLine());
@@ -19,7 +19,9 @@ namespace EmpMat1
             for (int counter = 0; counter < NumberOfApplicants; counter++)
             {
                 var a = new Applicant();
-
+                Console.WriteLine();
+                Console.WriteLine($"Applicant # {Counter1}");
+                Console.WriteLine();
                 Console.WriteLine("Enter First Name:");
                 a.FirstName = Console.ReadLine();
                 Console.WriteLine("Enter Middle Name:");
@@ -35,6 +37,7 @@ namespace EmpMat1
                 Console.WriteLine("Enter Age");
                 a.Age = Convert.ToInt32(Console.ReadLine());
                 applicantList.Add(a);
+                Counter1 = Counter1 + 1;
             }
 
             Console.WriteLine("__________________________________________________________________________________________________________________");
