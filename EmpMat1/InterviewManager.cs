@@ -17,13 +17,15 @@ namespace EmpMat1
             this.positionName = positionName;
         }
 
-        public Applicant AddApplicant(string firstName, string middleName, string lastName, int age)
+
+        public Applicant AddApplicant(string firstName, string middleName, string lastName, int age, string drugTest)
         {
             var newApplicant = new Applicant();
             newApplicant.FirstName = firstName;
             newApplicant.MiddleName = middleName;
             newApplicant.LastName = lastName;
             newApplicant.Age = age;
+            newApplicant.DrugTest = drugTest;
 
             this.AddApplicant(newApplicant);
             return newApplicant;
@@ -31,7 +33,7 @@ namespace EmpMat1
 
         public void AddApplicant(Applicant applicant)
         {
-            Console.WriteLine($"Adding applicant: {applicant.FirstName} {applicant.MiddleName} {applicant.LastName} {applicant.Id}");
+            Console.WriteLine($"Adding applicant: {applicant.FirstName} {applicant.MiddleName} {applicant.LastName} {applicant.Id} {applicant.DrugTest}");
             Console.WriteLine();
             this.applicants.Add(applicant);
         }
