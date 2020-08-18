@@ -7,8 +7,9 @@ namespace EmpMat1
        
         public Applicant()
         {
-
-            this.Id = 100;
+            var random = new Random();
+            var next = random.Next(1, 100);
+            this.Id = next;
 
         }
 
