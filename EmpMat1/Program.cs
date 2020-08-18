@@ -41,6 +41,7 @@ namespace EmpMat1
 
             foreach (var applicant in applicantList)
             {
+                Console.WriteLine();
                 Console.WriteLine($"{applicant.FirstName} {applicant.MiddleName} {applicant.LastName}, Age: {applicant.Age}, ID: {applicant.Id}");
                 if (applicant.Age < 18)
                 {
@@ -59,7 +60,7 @@ namespace EmpMat1
                 {
                     Console.WriteLine("You cannot work here unless you take a drug test.");
                 }
-
+                Console.WriteLine();
             }
             
         }
