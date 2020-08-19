@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace EmpMat1
 {
@@ -17,10 +18,27 @@ namespace EmpMat1
             this.positionName = positionName;
         }
 
-
-        public Applicant AddApplicant(string firstName, string middleName, string lastName, int age, string drugTest)
+        public List<Applicant> Applicants
         {
-            var newApplicant = new Applicant();
+            get => applicants;
+        }
+
+        public int GenerateUniqueId()
+        {
+            var random = new Random();
+
+            int newId;
+            do
+            {
+                newId = random.Next(10000, 100000);
+            } while (this.Applicants.Exists(applicant => applicant.Id == newId));
+
+            return newId;
+        }
+
+        public Applicant AddApplicant(string firstName, string middleName, string lastName, int age, bool drugTest)
+        {
+            var newApplicant = new Applicant(this.GenerateUniqueId());
             newApplicant.FirstName = firstName;
             newApplicant.MiddleName = middleName;
             newApplicant.LastName = lastName;
@@ -35,7 +53,7 @@ namespace EmpMat1
         {
             Console.WriteLine($"Adding applicant: {applicant.FirstName} {applicant.MiddleName} {applicant.LastName} {applicant.Id} {applicant.DrugTest}");
             Console.WriteLine();
-            this.applicants.Add(applicant);
+            this.Applicants.Add(applicant);
         }
     }
 }

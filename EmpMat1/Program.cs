@@ -5,20 +5,26 @@ namespace EmpMat1
 {
     class MainClass
     {
-
         public static void Main(string[] args)
         {
+            var manager = new InterviewManager("Janitor");
 
-            var applicantList = new List<Applicant>();
             int Counter1 = 1;
 
             Console.WriteLine("Enter Number of Applicants");
-            int NumberOfApplicants = Convert.ToInt32(Console.ReadLine());
 
-
-            for (int counter = 0; counter < NumberOfApplicants; counter++)
+            int applicantCount;
+            while (!(int.TryParse(Console.ReadLine(), out applicantCount) && applicantCount > 0))
             {
-                var a = new Applicant();
+                Console.WriteLine("You entered an invalid number. Try again.");
+            }
+
+            //int NumberOfApplicants = Convert.ToInt32(Console.ReadLine());
+
+
+            for (int counter = 0; counter < applicantCount; counter++)
+            {
+                var a = new Applicant(manager.GenerateUniqueId());
                 Console.WriteLine();
                 Console.WriteLine($"Applicant # {Counter1}");
                 Console.WriteLine();
@@ -28,21 +34,26 @@ namespace EmpMat1
                 a.MiddleName = Console.ReadLine();
                 Console.WriteLine("Enter Last Name:");
                 a.LastName = Console.ReadLine();
+
+                bool willTakeTest;
                 do
                 {
-                    Console.WriteLine("Will you take a drug test? 1 for yes 0 for no.");
-                    a.DrugTest = Console.ReadLine();
+                    Console.WriteLine("Will you take a drug test? (\"true\" or \"false\").");
 
-                } while (a.DrugTest != "1" && a.DrugTest != "0");
+                } while (!bool.TryParse(Console.ReadLine(), out willTakeTest));
+
+                a.DrugTest = willTakeTest;
+                
+
                 Console.WriteLine("Enter Age");
                 a.Age = Convert.ToInt32(Console.ReadLine());
-                applicantList.Add(a);
+                manager.AddApplicant(a);
                 Counter1 = Counter1 + 1;
             }
 
             Console.WriteLine("__________________________________________________________________________________________________________________");
 
-            foreach (var applicant in applicantList)
+            foreach (var applicant in manager.Applicants)
             {
                 Console.WriteLine();
                 Console.WriteLine($"{applicant.FirstName} {applicant.MiddleName} {applicant.LastName}, Age: {applicant.Age}, ID: {applicant.Id}");
@@ -55,7 +66,7 @@ namespace EmpMat1
                     Console.WriteLine("You are old enough to work here.");
                 }
                 Console.WriteLine();
-                if (applicant.DrugTest == "1" && applicant.Age > 17)
+                if (applicant.DrugTest && applicant.Age > 17)
                 {
                     Console.WriteLine("You may apply after drug test.");
                 }

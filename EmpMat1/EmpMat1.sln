@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpMat1", "EmpMat1.csproj", "{0391B746-1E0F-482B-8851-2ECE69C5CE52}"
 EndProject
 Global
@@ -9,9 +10,15 @@ Global
 		Release|anycpu = Release|anycpu
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0391B746-1E0F-482B-8851-2ECE69C5CE52}.Debug|anycpu.ActiveCfg = Debug|anycpu
-		{0391B746-1E0F-482B-8851-2ECE69C5CE52}.Debug|anycpu.Build.0 = Debug|anycpu
-		{0391B746-1E0F-482B-8851-2ECE69C5CE52}.Release|anycpu.ActiveCfg = Release|anycpu
-		{0391B746-1E0F-482B-8851-2ECE69C5CE52}.Release|anycpu.Build.0 = Release|anycpu
+		{0391B746-1E0F-482B-8851-2ECE69C5CE52}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{0391B746-1E0F-482B-8851-2ECE69C5CE52}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{0391B746-1E0F-482B-8851-2ECE69C5CE52}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{0391B746-1E0F-482B-8851-2ECE69C5CE52}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {401CFE49-755E-464C-8F4D-22142D637EDE}
 	EndGlobalSection
 EndGlobal
